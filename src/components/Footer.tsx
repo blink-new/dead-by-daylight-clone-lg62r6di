@@ -1,5 +1,5 @@
 import { Button } from './ui/button'
-import { Twitter, Youtube, Twitch, Instagram, Steam, Discord } from 'lucide-react'
+import { Twitter, Youtube, Twitch, Instagram, ExternalLink, MessageCircle } from 'lucide-react'
 
 const Footer = () => {
   return (
@@ -25,10 +25,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-red-400 hover:bg-gray-800/50">
-                <Steam className="h-5 w-5" />
+                <ExternalLink className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-red-400 hover:bg-gray-800/50">
-                <Discord className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-red-400 hover:bg-gray-800/50">
                 <Youtube className="h-5 w-5" />

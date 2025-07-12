@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button } from './ui/button'
-import { Menu, X, Steam } from 'lucide-react'
+import { Menu, X, ExternalLink } from 'lucide-react'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -46,7 +46,7 @@ const Navbar = () => {
               WISHLIST
             </Button>
             <Button className="bg-red-600 hover:bg-red-700 text-white flex items-center gap-2">
-              <Steam className="h-4 w-4" />
+              <ExternalLink className="h-4 w-4" />
               STEAM
             </Button>
           </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 WISHLIST
               </Button>
               <Button className="w-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center gap-2">
-                <Steam className="h-4 w-4" />
+                <ExternalLink className="h-4 w-4" />
                 STEAM
               </Button>
             </div>

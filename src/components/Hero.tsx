@@ -1,5 +1,5 @@
 import { Button } from './ui/button'
-import { Play, Steam } from 'lucide-react'
+import { Play, ExternalLink } from 'lucide-react'
 
 const Hero = () => {
   return (
@@ -46,7 +46,7 @@ const Hero = () => {
             size="lg" 
             className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold glow-cosmic flex items-center gap-2"
           >
-            <Steam className="h-5 w-5" />
+            <ExternalLink className="h-5 w-5" />
             JOUER MAINTENANT SUR STEAM
           </Button>
           
