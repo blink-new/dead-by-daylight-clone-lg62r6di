@@ -6,74 +6,74 @@
 
 @layer base {
   :root {
-    --background: 6 12 34; /* deep space blue */
+    --background: 0 0 0; /* deep space black */
     --foreground: 248 250 252; /* slate-50 */
-    --card: 15 23 42; /* slate-800 with blue tint */
+    --card: 15 15 15; /* darker black with red tint */
     --card-foreground: 248 250 252;
-    --popover: 15 23 42;
+    --popover: 15 15 15;
     --popover-foreground: 248 250 252;
-    --primary: 99 102 241; /* indigo-500 */
+    --primary: 239 68 68; /* red-500 */
     --primary-foreground: 255 255 255;
-    --secondary: 30 58 138; /* blue-800 */
+    --secondary: 154 52 18; /* orange-800 */
     --secondary-foreground: 248 250 252;
-    --muted: 30 58 138;
+    --muted: 127 29 29; /* red-900 */
     --muted-foreground: 156 163 175; /* gray-400 */
-    --accent: 139 92 246; /* violet-500 */
+    --accent: 234 88 12; /* orange-600 */
     --accent-foreground: 255 255 255;
-    --destructive: 239 68 68;
+    --destructive: 220 38 38;
     --destructive-foreground: 255 255 255;
-    --border: 59 130 246; /* blue-500 */
-    --input: 30 58 138;
-    --ring: 99 102 241;
-    --chart-1: 99 102 241;
-    --chart-2: 139 92 246;
-    --chart-3: 59 130 246;
-    --chart-4: 6 182 212;
-    --chart-5: 168 85 247;
+    --border: 239 68 68; /* red-500 */
+    --input: 127 29 29;
+    --ring: 239 68 68;
+    --chart-1: 239 68 68;
+    --chart-2: 234 88 12;
+    --chart-3: 249 115 22;
+    --chart-4: 251 146 60;
+    --chart-5: 252 176 64;
     --radius: 0.5rem;
-    --sidebar-background: 15 23 42;
+    --sidebar-background: 15 15 15;
     --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 99 102 241;
+    --sidebar-primary: 239 68 68;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 30 58 138;
+    --sidebar-accent: 127 29 29;
     --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 59 130 246;
-    --sidebar-ring: 99 102 241;
+    --sidebar-border: 239 68 68;
+    --sidebar-ring: 239 68 68;
   }
 
   .dark {
     --background: 0 0 0; /* true black space */
     --foreground: 248 250 252;
-    --card: 6 12 34;
+    --card: 10 10 10;
     --card-foreground: 248 250 252;
-    --popover: 6 12 34;
+    --popover: 10 10 10;
     --popover-foreground: 248 250 252;
-    --primary: 79 70 229; /* indigo-600 */
+    --primary: 220 38 38; /* red-600 */
     --primary-foreground: 255 255 255;
-    --secondary: 15 23 42;
+    --secondary: 15 15 15;
     --secondary-foreground: 248 250 252;
-    --muted: 15 23 42;
+    --muted: 15 15 15;
     --muted-foreground: 156 163 175;
-    --accent: 124 58 237; /* violet-600 */
+    --accent: 194 65 12; /* orange-700 */
     --accent-foreground: 255 255 255;
-    --destructive: 220 38 38;
+    --destructive: 185 28 28;
     --destructive-foreground: 255 255 255;
-    --border: 30 58 138;
-    --input: 30 58 138;
-    --ring: 79 70 229;
-    --chart-1: 79 70 229;
-    --chart-2: 124 58 237;
-    --chart-3: 37 99 235;
-    --chart-4: 8 145 178;
-    --chart-5: 147 51 234;
-    --sidebar-background: 6 12 34;
+    --border: 127 29 29;
+    --input: 127 29 29;
+    --ring: 220 38 38;
+    --chart-1: 220 38 38;
+    --chart-2: 194 65 12;
+    --chart-3: 234 88 12;
+    --chart-4: 249 115 22;
+    --chart-5: 251 146 60;
+    --sidebar-background: 10 10 10;
     --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 79 70 229;
+    --sidebar-primary: 220 38 38;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 15 23 42;
+    --sidebar-accent: 15 15 15;
     --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 30 58 138;
-    --sidebar-ring: 79 70 229;
+    --sidebar-border: 127 29 29;
+    --sidebar-ring: 220 38 38;
   }
 }
 
@@ -84,7 +84,7 @@
   
   body {
     @apply bg-background text-foreground font-['Inter'];
-    background: linear-gradient(135deg, #000014 0%, #0a0e27 50%, #000014 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a0a0a 25%, #2d1111 50%, #1a0a0a 75%, #000000 100%);
     min-height: 100vh;
   }
 
@@ -97,31 +97,31 @@
 @layer components {
   .cosmic-glow {
     text-shadow: 
-      0 0 5px rgba(99, 102, 241, 0.8),
-      0 0 10px rgba(99, 102, 241, 0.6),
-      0 0 15px rgba(99, 102, 241, 0.4),
-      0 0 20px rgba(99, 102, 241, 0.2);
+      0 0 5px rgba(239, 68, 68, 0.8),
+      0 0 10px rgba(239, 68, 68, 0.6),
+      0 0 15px rgba(239, 68, 68, 0.4),
+      0 0 20px rgba(239, 68, 68, 0.2);
   }
 
   .glow-cosmic {
     box-shadow: 
-      0 0 10px rgba(99, 102, 241, 0.5),
-      0 0 20px rgba(99, 102, 241, 0.3),
-      0 0 30px rgba(99, 102, 241, 0.1);
+      0 0 10px rgba(239, 68, 68, 0.5),
+      0 0 20px rgba(239, 68, 68, 0.3),
+      0 0 30px rgba(239, 68, 68, 0.1);
   }
 
   .cosmic-gradient {
     background: linear-gradient(135deg, 
-      #000014 0%, 
-      #0a0e27 25%, 
-      #1e1b4b 50%, 
-      #0a0e27 75%, 
-      #000014 100%
+      #000000 0%, 
+      #1a0a0a 25%, 
+      #2d1111 50%, 
+      #1a0a0a 75%, 
+      #000000 100%
     );
   }
 
   .text-cosmic {
-    background: linear-gradient(45deg, #60a5fa, #a78bfa, #c084fc);
+    background: linear-gradient(45deg, #ef4444, #f97316, #eab308);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -145,7 +145,7 @@
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+      radial-gradient(2px 2px at 20px 30px, #fff, transparent),
       radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
       radial-gradient(1px 1px at 90px 40px, #fff, transparent),
       radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
@@ -172,10 +172,10 @@
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(1px 1px at 20px 30px, rgba(99, 102, 241, 0.8), transparent),
-      radial-gradient(1px 1px at 40px 70px, rgba(139, 92, 246, 0.6), transparent),
-      radial-gradient(1px 1px at 90px 40px, rgba(59, 130, 246, 0.7), transparent),
-      radial-gradient(1px 1px at 130px 80px, rgba(168, 85, 247, 0.5), transparent);
+      radial-gradient(1px 1px at 20px 30px, rgba(239, 68, 68, 0.8), transparent),
+      radial-gradient(1px 1px at 40px 70px, rgba(249, 115, 22, 0.6), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(234, 88, 12, 0.7), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(252, 176, 64, 0.5), transparent);
     background-repeat: repeat;
     background-size: 300px 200px;
     animation: twinkling 4s ease-in-out infinite alternate;
@@ -197,9 +197,9 @@
     width: 100%;
     height: 100%;
     background: 
-      radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at 40% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 80%, rgba(234, 88, 12, 0.1) 0%, transparent 50%);
     animation: nebula-drift 30s ease-in-out infinite alternate;
   }
 
@@ -212,9 +212,9 @@
   /* Plasma effect */
   .plasma {
     background: linear-gradient(45deg, 
-      rgba(99, 102, 241, 0.1), 
-      rgba(139, 92, 246, 0.1), 
-      rgba(59, 130, 246, 0.1)
+      rgba(239, 68, 68, 0.1), 
+      rgba(249, 115, 22, 0.1), 
+      rgba(234, 88, 12, 0.1)
     );
     background-size: 400% 400%;
     animation: plasma 8s ease-in-out infinite;
@@ -224,6 +224,68 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+
+  /* Horror effects */
+  .horror-glow {
+    text-shadow: 
+      0 0 5px rgba(239, 68, 68, 0.9),
+      0 0 10px rgba(239, 68, 68, 0.7),
+      0 0 15px rgba(239, 68, 68, 0.5),
+      0 0 20px rgba(239, 68, 68, 0.3),
+      0 0 30px rgba(239, 68, 68, 0.1);
+  }
+
+  .blood-drip {
+    background: linear-gradient(180deg, 
+      rgba(220, 38, 38, 0.8) 0%, 
+      rgba(185, 28, 28, 0.6) 50%, 
+      rgba(127, 29, 29, 0.4) 100%
+    );
+    box-shadow: 
+      0 0 10px rgba(220, 38, 38, 0.5),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Cosmic terror animation */
+  @keyframes cosmic-terror {
+    0%, 100% { 
+      transform: scale(1) rotate(0deg); 
+      filter: hue-rotate(0deg);
+    }
+    25% { 
+      transform: scale(1.02) rotate(0.5deg); 
+      filter: hue-rotate(10deg);
+    }
+    50% { 
+      transform: scale(0.98) rotate(-0.5deg); 
+      filter: hue-rotate(-10deg);
+    }
+    75% { 
+      transform: scale(1.01) rotate(0.3deg); 
+      filter: hue-rotate(5deg);
+    }
+  }
+
+  .cosmic-terror {
+    animation: cosmic-terror 6s ease-in-out infinite;
+  }
+
+  /* Void effect */
+  .void-portal {
+    background: radial-gradient(
+      circle at center,
+      transparent 30%,
+      rgba(239, 68, 68, 0.1) 50%,
+      rgba(234, 88, 12, 0.2) 70%,
+      rgba(0, 0, 0, 0.8) 90%
+    );
+    animation: void-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes void-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
   }
 }
 
@@ -237,12 +299,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #ef4444, #f97316);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #dc2626, #ea580c);
 }
 
 /* Smooth scrolling */
@@ -254,11 +316,11 @@ html {
 @keyframes pulse-cosmic {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
   }
   50% {
     opacity: 0.8;
-    box-shadow: 0 0 0 15px rgba(99, 102, 241, 0);
+    box-shadow: 0 0 0 15px rgba(239, 68, 68, 0);
   }
 }
 
@@ -274,43 +336,62 @@ html {
 
 .hover-glow:hover {
   box-shadow: 
-    0 0 20px rgba(99, 102, 241, 0.4),
-    0 0 40px rgba(99, 102, 241, 0.2);
+    0 0 20px rgba(239, 68, 68, 0.4),
+    0 0 40px rgba(239, 68, 68, 0.2);
   transition: box-shadow 0.3s ease;
 }
 
 /* Selection color */
 ::selection {
-  background-color: rgba(99, 102, 241, 0.3);
+  background-color: rgba(239, 68, 68, 0.3);
   color: white;
 }
 
-/* Quantum effect */
-@keyframes quantum {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-  25% { transform: scale(1.05) rotate(1deg); opacity: 0.8; }
-  50% { transform: scale(0.95) rotate(-1deg); opacity: 1; }
-  75% { transform: scale(1.02) rotate(0.5deg); opacity: 0.9; }
+/* Distortion effect for horror */
+@keyframes distortion {
+  0%, 100% { 
+    transform: scale(1) skew(0deg, 0deg); 
+    filter: hue-rotate(0deg) contrast(1);
+  }
+  25% { 
+    transform: scale(1.01) skew(0.5deg, 0deg); 
+    filter: hue-rotate(5deg) contrast(1.1);
+  }
+  50% { 
+    transform: scale(0.99) skew(-0.5deg, 0.2deg); 
+    filter: hue-rotate(-5deg) contrast(0.9);
+  }
+  75% { 
+    transform: scale(1.005) skew(0.2deg, -0.3deg); 
+    filter: hue-rotate(3deg) contrast(1.05);
+  }
 }
 
-.quantum-effect {
-  animation: quantum 3s ease-in-out infinite;
+.distortion-effect {
+  animation: distortion 8s ease-in-out infinite;
 }
 
-/* Hologram effect */
-.hologram {
-  position: relative;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(99, 102, 241, 0.1) 50%,
-    transparent 70%
-  );
-  background-size: 20px 20px;
-  animation: hologram-scan 2s linear infinite;
+/* Emergency light effect */
+@keyframes emergency-light {
+  0%, 100% { background-color: rgba(239, 68, 68, 0.1); }
+  50% { background-color: rgba(239, 68, 68, 0.3); }
 }
 
-@keyframes hologram-scan {
-  0% { background-position: -20px 0; }
-  100% { background-position: 20px 0; }
+.emergency-light {
+  animation: emergency-light 2s ease-in-out infinite;
+}
+
+/* Line height adjustments for better readability */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

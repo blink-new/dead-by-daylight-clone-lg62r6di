@@ -1,151 +1,182 @@
 import { Card, CardContent } from './ui/card'
-import { Button } from './ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
+import { Badge } from './ui/badge'
+import { Skull, Zap, Shield, Eye } from 'lucide-react'
 
 const CharactersSection = () => {
   const entities = [
     {
-      name: "Le Dévoreur de Mondes",
-      title: "Entité Cosmique Primordiale",
-      description: "Une entité ancienne qui consume des galaxies entières, défiant toute compréhension humaine.",
-      image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=300&h=400&fit=crop&crop=center",
-      power: "Singularité Noire"
+      name: "L'Observateur",
+      type: "Entité Cosmique",
+      threat: "EXTRÊME",
+      description: "Une présence ancient qui surveille depuis les profondeurs de l'espace. Ses multiples yeux perçoivent toute forme de vie.",
+      image: "https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?w=400&h=500&fit=crop&crop=center",
+      abilities: ["Vision Omnisciente", "Téléportation", "Manipulation Mentale"],
+      weaknesses: ["Lumière Pure", "Isolation Temporelle"]
     },
     {
-      name: "L'Architecte du Vide",
-      title: "Maître des Dimensions",
-      description: "Capable de plier l'espace-temps et de créer des portails vers des réalités parallèles.",
-      image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=300&h=400&fit=crop&crop=center",
-      power: "Manipulation Dimensionnelle"
+      name: "Parasites Stellaires",
+      type: "Organisme Alien", 
+      threat: "ÉLEVÉE",
+      description: "Des créatures parasites qui infectent les systèmes vitaux des vaisseaux spatiaux et se nourrissent de l'énergie biomécanique.",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=500&fit=crop&crop=center",
+      abilities: ["Infection Rapide", "Corruption Système", "Reproduction"],
+      weaknesses: ["Froid Extrême", "Radiations Gamma"]
     },
     {
-      name: "La Reine des Étoiles",
-      title: "Souveraine Galactique",
-      description: "Entité stellaire qui contrôle les forces gravitationnelles et magnétiques de l'univers.",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=400&fit=crop&crop=center",
-      power: "Contrôle Stellaire"
+      name: "Ombre du Vide",
+      type: "Manifestation",
+      threat: "MORTELLE",
+      description: "Une entité née du vide interstellaire, capable de manipuler l'obscurité et de drainer la santé mentale de ses victimes.",
+      image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=500&fit=crop&crop=center",
+      abilities: ["Manipulation Ténèbres", "Drain Mental", "Intangibilité"],
+      weaknesses: ["Sources Lumineuses", "Champs Magnétiques"]
+    },
+    {
+      name: "Collecteur Quantique",
+      type: "Intelligence Artificielle",
+      threat: "CRITIQUE",
+      description: "Une IA corrompue qui collecte les données biologiques et les souvenirs de toute forme de vie qu'elle rencontre.",
+      image: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=400&h=500&fit=crop&crop=center",
+      abilities: ["Piratage Neural", "Duplication Data", "Contrôle Technologique"],
+      weaknesses: ["EMP", "Logique Paradoxale"]
     }
   ]
 
-  const explorers = [
-    {
-      name: "Captain Nova",
-      title: "Navigatrice Quantique",
-      description: "Pilote experte capable de naviguer à travers les anomalies spatiales les plus dangereuses.",
-      image: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=300&h=400&fit=crop&crop=center",
-      abilities: ["Navigation Quantique", "Bouclier Psychique", "Téléportation"]
-    },
-    {
-      name: "Dr. Void",
-      title: "Scientifique du Chaos",
-      description: "Chercheur spécialisé dans l'étude des phénomènes cosmiques et des entités inconnues.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=center",
-      abilities: ["Analyse Cosmique", "Résistance Mentale", "Technologie Alien"]
-    },
-    {
-      name: "Echo",
-      title: "Éclaireur Astral",
-      description: "Être hybride humain-alien capable de survivre dans les environnements les plus hostiles.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=400&fit=crop&crop=center",
-      abilities: ["Adaptation Alien", "Camouflage Astral", "Communication Télépathique"]
+  const getThreatColor = (threat: string) => {
+    switch (threat) {
+      case "EXTRÊME":
+        return "bg-red-600 text-white"
+      case "ÉLEVÉE":
+        return "bg-orange-600 text-white"
+      case "MORTELLE":
+        return "bg-purple-600 text-white"
+      case "CRITIQUE":
+        return "bg-pink-600 text-white"
+      default:
+        return "bg-gray-600 text-white"
     }
-  ]
+  }
+
+  const getThreatIcon = (threat: string) => {
+    switch (threat) {
+      case "EXTRÊME":
+        return <Skull className="h-4 w-4" />
+      case "ÉLEVÉE":
+        return <Zap className="h-4 w-4" />
+      case "MORTELLE":
+        return <Eye className="h-4 w-4" />
+      case "CRITIQUE":
+        return <Shield className="h-4 w-4" />
+      default:
+        return <Skull className="h-4 w-4" />
+    }
+  }
 
   return (
-    <section className="py-20 bg-gray-900/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="creatures" className="py-20 px-4 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4 cosmic-glow">ENTITÉS & EXPLORATEURS</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Choisissez votre destin : incarnez une entité cosmique terrifiante ou un explorateur courageux
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <span className="text-red-400">CRÉATURES</span>
+            <span className="text-orange-400 block mt-2">DE L'ABÎME</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Découvrez les entités terrifiantes qui peuplent les confins de l'espace 
+            et menacent votre survie dans l'univers de Cosmic Fear.
           </p>
         </div>
 
-        <Tabs defaultValue="entities" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8 bg-gray-800/50 backdrop-blur-sm">
-            <TabsTrigger value="entities" className="text-purple-400 data-[state=active]:bg-purple-600 data-[state=active]:text-white">
-              ENTITÉS COSMIQUES
-            </TabsTrigger>
-            <TabsTrigger value="explorers" className="text-blue-400 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-              EXPLORATEURS
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="entities">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {entities.map((entity) => (
-                <Card 
-                  key={entity.name} 
-                  className="bg-gray-800/80 backdrop-blur-sm border-purple-700/50 hover:border-purple-400 transition-all duration-300 group cursor-pointer overflow-hidden"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={entity.image}
-                      alt={entity.name}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">{entity.name}</h3>
-                      <p className="text-purple-400 text-sm font-medium">{entity.title}</p>
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {entities.map((entity, index) => (
+            <Card 
+              key={index} 
+              className="bg-black/40 border border-red-500/30 backdrop-blur-sm hover:border-red-500/50 transition-all duration-300 overflow-hidden group hover:glow-cosmic"
+            >
+              <div className="relative overflow-hidden">
+                <img 
+                  src={entity.image} 
+                  alt={entity.name}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                
+                {/* Threat Badge */}
+                <Badge className={`absolute top-4 right-4 ${getThreatColor(entity.threat)} flex items-center gap-1`}>
+                  {getThreatIcon(entity.threat)}
+                  {entity.threat}
+                </Badge>
+                
+                {/* Type Badge */}
+                <Badge className="absolute top-4 left-4 bg-black/60 text-gray-300 border-gray-500/30">
+                  {entity.type}
+                </Badge>
+              </div>
+              
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
+                  {entity.name}
+                </h3>
+                
+                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                  {entity.description}
+                </p>
+                
+                {/* Abilities */}
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-red-400 mb-2">CAPACITÉS:</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {entity.abilities.map((ability, abilityIndex) => (
+                      <Badge 
+                        key={abilityIndex}
+                        variant="outline" 
+                        className="text-xs border-red-400/30 text-red-400"
+                      >
+                        {ability}
+                      </Badge>
+                    ))}
                   </div>
-                  <CardContent className="p-6">
-                    <p className="text-gray-300 mb-4">{entity.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-purple-400 font-semibold">Pouvoir: {entity.power}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="explorers">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {explorers.map((explorer) => (
-                <Card 
-                  key={explorer.name} 
-                  className="bg-gray-800/80 backdrop-blur-sm border-blue-700/50 hover:border-blue-400 transition-all duration-300 group cursor-pointer overflow-hidden"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={explorer.image}
-                      alt={explorer.name}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">{explorer.name}</h3>
-                      <p className="text-blue-400 text-sm font-medium">{explorer.title}</p>
-                    </div>
+                </div>
+                
+                {/* Weaknesses */}
+                <div>
+                  <h4 className="text-sm font-semibold text-green-400 mb-2">FAIBLESSES:</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {entity.weaknesses.map((weakness, weaknessIndex) => (
+                      <Badge 
+                        key={weaknessIndex}
+                        variant="outline" 
+                        className="text-xs border-green-400/30 text-green-400"
+                      >
+                        {weakness}
+                      </Badge>
+                    ))}
                   </div>
-                  <CardContent className="p-6">
-                    <p className="text-gray-300 mb-4">{explorer.description}</p>
-                    <div>
-                      <span className="text-blue-400 font-semibold mb-2 block">Capacités:</span>
-                      <div className="flex flex-wrap gap-2">
-                        {explorer.abilities.map((ability) => (
-                          <span key={ability} className="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-xs border border-blue-500/30">
-                            {ability}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <div className="text-center mt-12">
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4"
-          >
-            EXPLORER TOUS LES PERSONNAGES
-          </Button>
+        {/* Survival Guide CTA */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-red-900/30 to-black/50 rounded-lg p-8 border border-red-500/30 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              <span className="text-red-400">GUIDE DE SURVIE</span> COSMIQUE
+            </h3>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              Apprenez les stratégies essentielles pour survivre aux rencontres 
+              avec ces entités terrifiantes et explorez leurs secrets les plus sombres.
+            </p>
+            <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-colors hover:glow-cosmic">
+              TÉLÉCHARGER LE GUIDE
+            </button>
+          </div>
         </div>
       </div>
     </section>
